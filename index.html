@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SteelHaven Sheds — Built On-Site. Built to Last.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --slate-900: #0f1117;
+  --slate-800: #1a1d27;
+  --slate-700: #252836;
+  --slate-600: #363b50;
+  --slate-400: #8b92a9;
+  --slate-200: #d4d8e8;
+  --slate-100: #eceef5;
+  --white: #ffffff;
+  --accent: #c8a96e;
+  --accent-light: #e8cfa0;
+  --accent-dark: #a07840;
+  --green: #3ecf8e;
+  --green-dim: #1a5c40;
+  --red: #e05555;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--slate-900);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─── UTILITY ─── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.accent { color: var(--accent); }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(200,169,110,0.35);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+section { padding: 100px 0; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(15,17,23,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+.nav-logo span { color: var(--accent); }
+.nav-cta {
+  background: var(--accent);
+  color: var(--slate-900);
+  font-size: 13px; font-weight: 700;
+  padding: 10px 22px; border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--accent-light); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding-top: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 75% 50%, rgba(200,169,110,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(62,207,142,0.04) 0%, transparent 60%),
+    linear-gradient(160deg, #0f1117 60%, #161922 100%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 24px;
+}
+.live-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+.hero-eyebrow span { font-size: 12px; font-weight: 600; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; }
+
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+.hero-sub {
+  font-size: 18px; font-weight: 400; color: var(--slate-400);
+  max-width: 480px; margin-bottom: 36px; line-height: 1.7;
+}
+.cta-group { display: flex; flex-direction: column; gap: 14px; }
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--accent);
+  color: var(--slate-900);
+  font-size: 16px; font-weight: 700;
+  padding: 18px 36px; border-radius: 12px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.2s; width: fit-content;
+  box-shadow: 0 8px 32px rgba(200,169,110,0.25);
+}
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(200,169,110,0.35); }
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--green); font-size: 14px; font-weight: 600;
+  text-decoration: none; width: fit-content;
+  padding: 12px 0;
+}
+.btn-whatsapp:hover { color: #5de8a8; }
+.btn-whatsapp svg { width: 20px; height: 20px; }
+
+.hero-visual {
+  position: relative; display: flex; justify-content: center; align-items: center;
+}
+.shed-card {
+  width: 100%; max-width: 480px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1e2133, #161825);
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+}
+.shed-img {
+  width: 100%; aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #2a2d3e 0%, #1a1e2e 40%, #1e2535 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+/* Stylized shed SVG illustration */
+.shed-svg { width: 75%; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)); }
+.shed-meta { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+.shed-name { font-size: 14px; font-weight: 600; }
+.shed-size { font-size: 12px; color: var(--slate-400); }
+.shed-badge { background: rgba(200,169,110,0.15); color: var(--accent); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 40px;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.07);
+}
+.stat-item { display: flex; flex-direction: column; gap: 4px; }
+.stat-num { font-size: 22px; font-weight: 700; }
+.stat-label { font-size: 12px; color: var(--slate-400); }
+
+/* ─── PROBLEM ─── */
+#problem { background: var(--slate-800); }
+.section-header { text-align: center; margin-bottom: 60px; }
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.section-sub { font-size: 17px; color: var(--slate-400); max-width: 560px; margin: 0 auto; }
+
+.pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.pain-card {
+  padding: 32px 28px;
+  background: var(--slate-900);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  transition: border-color 0.2s;
+}
+.pain-card:hover { border-color: rgba(200,169,110,0.2); }
+.pain-icon { font-size: 32px; margin-bottom: 16px; }
+.pain-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.pain-desc { font-size: 14px; color: var(--slate-400); line-height: 1.6; }
+
+/* ─── SOLUTION ─── */
+#solution { background: var(--slate-900); }
+.solution-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.solution-visual {
+  border-radius: 20px; overflow: hidden;
+  background: linear-gradient(145deg, #1e2133, #161825);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 40px;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 360px;
+}
+.checkpoints { display: flex; flex-direction: column; gap: 18px; margin-top: 32px; }
+.checkpoint {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 20px 22px;
+  background: var(--slate-800);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.check-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(62,207,142,0.12); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+  color: var(--green); font-size: 13px; font-weight: 700;
+}
+.check-text strong { font-size: 14px; font-weight: 600; display: block; margin-bottom: 4px; }
+.check-text span { font-size: 13px; color: var(--slate-400); }
+
+/* ─── BENEFITS ─── */
+#benefits { background: var(--slate-800); }
+.benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.benefit-card {
+  padding: 36px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: var(--slate-900);
+  position: relative; overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.benefit-card:hover { transform: translateY(-4px); border-color: rgba(200,169,110,0.25); }
+.benefit-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.benefit-card:hover::before { opacity: 1; }
+.benefit-num { font-size: 42px; font-weight: 800; color: rgba(200,169,110,0.12); line-height: 1; margin-bottom: 16px; }
+.benefit-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.benefit-desc { font-size: 14px; color: var(--slate-400); line-height: 1.7; }
+
+/* ─── FEATURES ─── */
+#features { background: var(--slate-900); }
+.features-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.features-list { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.feature-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px;
+  background: var(--slate-800);
+  border-radius: 10px;
+  font-size: 14px; font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.feature-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+/* ─── HOW IT WORKS ─── */
+#howitworks { background: var(--slate-800); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.steps::before {
+  content: ''; position: absolute;
+  top: 32px; left: calc(12.5% + 20px); right: calc(12.5% + 20px); height: 1px;
+  background: linear-gradient(90deg, var(--accent), rgba(200,169,110,0.1));
+}
+.step { text-align: center; padding: 0 16px; }
+.step-num {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 800; color: var(--slate-900);
+  margin: 0 auto 24px;
+  position: relative; z-index: 2;
+}
+.step-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.step-desc { font-size: 13px; color: var(--slate-400); line-height: 1.6; }
+
+/* ─── SOCIAL PROOF ─── */
+#proof { background: var(--slate-900); }
+.testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 60px; }
+.testi-card {
+  padding: 32px 28px;
+  background: var(--slate-800);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.stars { color: var(--accent); font-size: 14px; margin-bottom: 16px; }
+.testi-text { font-size: 14px; color: var(--slate-200); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: var(--slate-900);
+}
+.testi-name { font-size: 14px; font-weight: 600; }
+.testi-loc { font-size: 12px; color: var(--slate-400); }
+.trust-badges { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.badge {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--slate-800);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 24px; border-radius: 10px;
+  font-size: 13px; font-weight: 600; color: var(--slate-200);
+}
+.badge-icon { font-size: 20px; }
+
+/* ─── PRICING ─── */
+#pricing { background: var(--slate-800); }
+.pricing-cards { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 20px; align-items: start; }
+.pricing-card {
+  padding: 36px 32px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--slate-900);
+}
+.pricing-card.featured {
+  background: linear-gradient(145deg, #1e2235, #1a1d2e);
+  border-color: var(--accent);
+  box-shadow: 0 0 60px rgba(200,169,110,0.1);
+  position: relative;
+}
+.featured-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: var(--slate-900);
+  font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+  padding: 5px 18px; border-radius: 999px; text-transform: uppercase;
+  white-space: nowrap;
+}
+.plan-name { font-size: 13px; font-weight: 600; color: var(--slate-400); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.plan-price { font-size: 44px; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+.plan-price span { font-size: 18px; font-weight: 400; color: var(--slate-400); }
+.plan-was { font-size: 13px; color: var(--slate-400); text-decoration: line-through; margin-bottom: 20px; }
+.plan-desc { font-size: 14px; color: var(--slate-400); margin-bottom: 24px; line-height: 1.6; }
+.plan-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.plan-feature { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.plan-feature .check { color: var(--green); font-weight: 700; }
+.btn-outline {
+  display: block; text-align: center;
+  border: 1.5px solid rgba(255,255,255,0.2); color: var(--white);
+  font-size: 14px; font-weight: 700; padding: 14px;
+  border-radius: 10px; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-featured {
+  display: block; text-align: center;
+  background: var(--accent); color: var(--slate-900);
+  font-size: 14px; font-weight: 700; padding: 14px;
+  border-radius: 10px; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-featured:hover { background: var(--accent-light); }
+.pricing-note { text-align: center; margin-top: 24px; font-size: 13px; color: var(--slate-400); }
+
+/* ─── FAQ ─── */
+#faq { background: var(--slate-900); }
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--slate-800);
+}
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 22px 26px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 15px; font-weight: 600; color: var(--white);
+  font-family: 'Sora', sans-serif; text-align: left;
+  gap: 16px;
+}
+.faq-q .arrow { color: var(--accent); font-size: 18px; transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-q .arrow { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
+  font-size: 14px; color: var(--slate-400); line-height: 1.7;
+  padding: 0 26px;
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 26px 22px; }
+
+/* ─── CTA SECTION ─── */
+#cta-final {
+  background: linear-gradient(135deg, #16191f 0%, #1a1d2b 100%);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center; padding: 120px 0;
+  position: relative; overflow: hidden;
+}
+#cta-final::before {
+  content: '';
+  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse, rgba(200,169,110,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.urgency-bar {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(224,85,85,0.1); border: 1px solid rgba(224,85,85,0.3);
+  color: #ff8888; font-size: 12px; font-weight: 600;
+  padding: 8px 18px; border-radius: 999px;
+  margin-bottom: 28px; letter-spacing: 0.06em;
+}
+.urgency-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 1.5s ease-in-out infinite; }
+.cta-final-h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.02em;
+}
+.cta-final-sub { font-size: 18px; color: var(--slate-400); margin-bottom: 44px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.btn-lg {
+  font-size: 17px; font-weight: 700;
+  padding: 20px 42px; border-radius: 14px;
+  text-decoration: none; display: inline-block;
+}
+.btn-lg.primary { background: var(--accent); color: var(--slate-900); box-shadow: 0 8px 40px rgba(200,169,110,0.3); }
+.btn-lg.primary:hover { background: var(--accent-light); }
+.btn-lg.secondary { border: 1.5px solid rgba(255,255,255,0.15); color: var(--white); }
+.btn-lg.secondary:hover { border-color: rgba(200,169,110,0.4); color: var(--accent); }
+.micro-copy { margin-top: 18px; font-size: 13px; color: var(--slate-400); }
+
+/* ─── FORM SECTION ─── */
+#form-section { background: var(--slate-800); }
+.form-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.form-card {
+  background: var(--slate-900);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 44px 40px;
+}
+.form-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.form-card p { font-size: 14px; color: var(--slate-400); margin-bottom: 28px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { font-size: 12px; font-weight: 600; color: var(--slate-400); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+.form-group input, .form-group select {
+  width: 100%;
+  background: var(--slate-800); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white); font-family: 'Sora', sans-serif; font-size: 14px;
+  padding: 14px 16px; border-radius: 10px; outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+.form-group select option { background: var(--slate-800); }
+.form-submit {
+  width: 100%;
+  background: var(--accent); color: var(--slate-900);
+  font-size: 16px; font-weight: 700;
+  padding: 17px; border-radius: 12px;
+  border: none; cursor: pointer; font-family: 'Sora', sans-serif;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+.form-submit:hover { background: var(--accent-light); }
+.form-privacy { text-align: center; font-size: 11px; color: var(--slate-400); margin-top: 12px; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--slate-900);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 60px 0 40px;
+}
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.footer-logo { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.footer-tagline { font-size: 13px; color: var(--slate-400); line-height: 1.7; max-width: 220px; }
+.footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-400); margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 13px; color: var(--slate-400); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 12px; color: var(--slate-600); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
+  .hero-inner, .solution-inner, .features-inner, .form-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { display: none; }
+  .pain-grid, .benefits-grid, .testimonials, .pricing-cards { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .steps::before { display: none; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .trust-badges { gap: 16px; }
+  .pricing-card.featured { order: -1; }
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-up {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Steel<span>Haven</span></div>
+  <a href="#form-section" class="nav-cta">Get a Free Quote →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">
+          <div class="live-dot"></div>
+          <span>Accepting installs this month</span>
+        </div>
+        <h1>Your Backyard<br>Finally Has a<br><span class="accent">Place for Everything.</span></h1>
+        <p class="hero-sub">A premium aluminum shed, built directly on your property — no DIY, no stress, no cheap plastic. Just a clean, secure structure that lasts decades.</p>
+        <div class="cta-group">
+          <a href="#form-section" class="btn-primary">
+            📐 Get My Free Quote
+            <span style="font-size:12px;font-weight:400;opacity:0.8;">Takes 60 seconds</span>
+          </a>
+          <a href="https://wa.me/your-number" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp — reply in minutes
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num accent">500+</span><span class="stat-label">Sheds installed</span></div>
+          <div class="stat-item"><span class="stat-num accent">25yr</span><span class="stat-label">Lifespan warranty</span></div>
+          <div class="stat-item"><span class="stat-num accent">1 day</span><span class="stat-label">Installation time</span></div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up">
+        <div class="shed-card">
+          <div class="shed-img">
+            <!-- Stylized Shed SVG -->
+            <svg class="shed-svg" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Ground shadow -->
+              <ellipse cx="160" cy="220" rx="120" ry="10" fill="rgba(0,0,0,0.3)"/>
+              <!-- Roof -->
+              <polygon points="40,100 160,50 280,100" fill="#4a5060"/>
+              <polygon points="40,100 160,55 280,100 280,105 160,60 40,105" fill="#5a6070"/>
+              <!-- Main body -->
+              <rect x="50" y="100" width="220" height="120" fill="#3a3f52"/>
+              <!-- Side panel lines -->
+              <line x1="90" y1="100" x2="90" y2="220" stroke="#2e3345" stroke-width="1"/>
+              <line x1="130" y1="100" x2="130" y2="220" stroke="#2e3345" stroke-width="1"/>
+              <line x1="190" y1="100" x2="190" y2="220" stroke="#2e3345" stroke-width="1"/>
+              <line x1="230" y1="100" x2="230" y2="220" stroke="#2e3345" stroke-width="1"/>
+              <!-- Double doors -->
+              <rect x="118" y="130" width="40" height="90" rx="2" fill="#2a2f40"/>
+              <rect x="162" y="130" width="40" height="90" rx="2" fill="#2a2f40"/>
+              <!-- Door frames -->
+              <rect x="118" y="130" width="40" height="90" rx="2" fill="none" stroke="#c8a96e" stroke-width="1.5"/>
+              <rect x="162" y="130" width="40" height="90" rx="2" fill="none" stroke="#c8a96e" stroke-width="1.5"/>
+              <!-- Door handles -->
+              <circle cx="158" cy="175" r="3" fill="#c8a96e"/>
+              <circle cx="162" cy="175" r="3" fill="#c8a96e"/>
+              <!-- Window left -->
+              <rect x="62" y="118" width="36" height="28" rx="2" fill="#1e2535"/>
+              <rect x="62" y="118" width="36" height="28" rx="2" fill="none" stroke="#5a6070" stroke-width="1"/>
+              <line x1="80" y1="118" x2="80" y2="146" stroke="#5a6070" stroke-width="1"/>
+              <!-- Window right -->
+              <rect x="222" y="118" width="36" height="28" rx="2" fill="#1e2535"/>
+              <rect x="222" y="118" width="36" height="28" rx="2" fill="none" stroke="#5a6070" stroke-width="1"/>
+              <line x1="240" y1="118" x2="240" y2="146" stroke="#5a6070" stroke-width="1"/>
+              <!-- Vent strip on roof -->
+              <rect x="140" y="56" width="40" height="6" rx="1" fill="#5a6070"/>
+              <line x1="148" y1="56" x2="148" y2="62" stroke="#3a4050" stroke-width="1"/>
+              <line x1="156" y1="56" x2="156" y2="62" stroke="#3a4050" stroke-width="1"/>
+              <line x1="164" y1="56" x2="164" y2="62" stroke="#3a4050" stroke-width="1"/>
+              <line x1="172" y1="56" x2="172" y2="62" stroke="#3a4050" stroke-width="1"/>
+              <!-- Ground strip -->
+              <rect x="46" y="218" width="228" height="6" rx="2" fill="#2a2f40"/>
+              <!-- Accent glow on door -->
+              <rect x="118" y="130" width="84" height="90" rx="2" fill="none" stroke="rgba(200,169,110,0.2)" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="shed-meta">
+            <div>
+              <div class="shed-name">ProSeries Aluminum Shed</div>
+              <div class="shed-size">10×12 ft — Customizable</div>
+            </div>
+            <div class="shed-badge">In Stock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Sound familiar?</div>
+      <h2>The Backyard Storage<br>Problem Is Real</h2>
+      <p class="section-sub">Most homeowners just deal with the mess — because they don't know there's a better option.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <div class="pain-icon">🚧</div>
+        <div class="pain-title">Clutter that never goes away</div>
+        <div class="pain-desc">Garden tools, bikes, seasonal gear, kids' toys — they pile up fast. Your garage is full, your shed (if you have one) is overflowing, and your backyard looks like a storage unit.</div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="pain-icon">🗑️</div>
+        <div class="pain-title">Cheap sheds that don't last</div>
+        <div class="pain-desc">You've tried those flat-pack plastic or wooden sheds. They rust, warp, leak, blow over in storms, and look terrible within 2 years. Then you're back to square one.</div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="pain-icon">🔧</div>
+        <div class="pain-title">DIY is a nightmare</div>
+        <div class="pain-desc">Half-day assembly becomes a 3-weekend project. Instructions are confusing, parts go missing, and the result is still wobbly. Not exactly what you signed up for.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="container">
+    <div class="solution-inner">
+      <div>
+        <div class="tag">The SteelHaven Solution</div>
+        <h2>A Shed That's Built<br><span class="accent">For You. By Us.</span></h2>
+        <p style="font-size:16px;color:var(--slate-400);margin-bottom:32px;line-height:1.7;">We build a premium aluminum shed directly on your property — no flat-pack confusion, no weekend frustration. You get a clean, modern structure installed in a single day.</p>
+        <div class="checkpoints">
+          <div class="checkpoint">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Built on-site by our team</strong>
+              <span>We handle everything from footings to the final lock. You don't lift a finger.</span>
+            </div>
+          </div>
+          <div class="checkpoint">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Aircraft-grade aluminum frame</strong>
+              <span>Built to outlast wooden sheds, plastic boxes, and even most steel units.</span>
+            </div>
+          </div>
+          <div class="checkpoint">
+            <div class="check-icon">✓</div>
+            <div class="check-text">
+              <strong>Looks as good as it performs</strong>
+              <span>Clean grey finish, double doors, ventilation — it actually improves your backyard.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="solution-visual fade-up" style="flex-direction:column;gap:20px;">
+        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:340px;">
+          <rect x="20" y="80" width="240" height="110" rx="4" fill="#2a2f42"/>
+          <polygon points="20,80 140,30 260,80" fill="#363b52"/>
+          <rect x="100" y="110" width="40" height="80" fill="#1e2435" rx="2"/>
+          <rect x="140" y="110" width="40" height="80" fill="#1e2435" rx="2"/>
+          <rect x="100" y="110" width="80" height="80" fill="none" stroke="rgba(200,169,110,0.4)" stroke-width="1.5" rx="2"/>
+          <rect x="40" y="96" width="32" height="24" rx="2" fill="#161c2e"/>
+          <rect x="208" y="96" width="32" height="24" rx="2" fill="#161c2e"/>
+          <circle cx="140" cy="150" r="4" fill="#c8a96e"/>
+          <rect x="10" y="190" width="260" height="6" rx="2" fill="#1a1e2c"/>
+          <!-- Ground indicators -->
+          <line x1="20" y1="196" x2="260" y2="196" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+          <text x="140" y="22" text-anchor="middle" fill="#c8a96e" font-size="9" font-family="sans-serif" font-weight="600">VENTILATION SYSTEM</text>
+          <line x1="140" y1="26" x2="140" y2="40" stroke="#c8a96e" stroke-width="1" opacity="0.5"/>
+        </svg>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;">
+          <div style="background:var(--slate-700);border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:11px;color:var(--slate-400);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;">Material</div>
+            <div style="font-size:14px;font-weight:600;">Aluminum + Galv. Steel</div>
+          </div>
+          <div style="background:var(--slate-700);border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:11px;color:var(--slate-400);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;">Install time</div>
+            <div style="font-size:14px;font-weight:600;">1 Business Day</div>
+          </div>
+          <div style="background:var(--slate-700);border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:11px;color:var(--slate-400);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;">Maintenance</div>
+            <div style="font-size:14px;font-weight:600;color:var(--green);">Zero required</div>
+          </div>
+          <div style="background:var(--slate-700);border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:11px;color:var(--slate-400);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;">Lifespan</div>
+            <div style="font-size:14px;font-weight:600;">25+ Years</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Why SteelHaven</div>
+      <h2>Built Different.<br>On Purpose.</h2>
+      <p class="section-sub">Every choice we make is about one thing: giving you a structure you'll never have to think about again.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-up">
+        <div class="benefit-num">01</div>
+        <div class="benefit-title">Built to outlive your mortgage</div>
+        <div class="benefit-desc">Aluminum doesn't rust, warp, rot, or fade. Our frames are engineered to hold up through decades of rain, heat, frost, and UV exposure without degrading. Once it's built, it stays built.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-num">02</div>
+        <div class="benefit-title">Weather doesn't stand a chance</div>
+        <div class="benefit-desc">Fully sealed panels, galvanized steel fixings, and weather-strip door seals mean your tools stay dry even in the heaviest downpours. Rated for winds up to 95mph.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-num">03</div>
+        <div class="benefit-title">Zero maintenance. Ever.</div>
+        <div class="benefit-desc">No painting, no treating, no replacing panels. Unlike wood, aluminum requires nothing from you. Just open the door and get on with your day — every time, for years.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-num">04</div>
+        <div class="benefit-title">Your stuff. Secured.</div>
+        <div class="benefit-desc">Heavy-duty lockable double doors with anti-pry reinforcement. Whether it's a $3,000 bike or garden equipment, your valuables aren't going anywhere without your key.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="features-inner">
+      <div class="fade-up">
+        <div class="tag">Technical Specs</div>
+        <h2>Everything Included.<br>Nothing Compromised.</h2>
+        <p style="font-size:15px;color:var(--slate-400);margin-top:16px;line-height:1.7;">Every SteelHaven shed comes fully equipped — no add-on charges, no surprise extras.</p>
+      </div>
+      <div class="features-list fade-up">
+        <div class="feature-item"><div class="feature-dot"></div>Aircraft-grade aluminum panel construction</div>
+        <div class="feature-item"><div class="feature-dot"></div>Galvanized steel structural frame</div>
+        <div class="feature-item"><div class="feature-dot"></div>Lockable double-door entry with anti-pry bars</div>
+        <div class="feature-item"><div class="feature-dot"></div>Built-in roof ventilation system</div>
+        <div class="feature-item"><div class="feature-dot"></div>Weather-sealed door and panel gaps</div>
+        <div class="feature-item"><div class="feature-dot"></div>UV-resistant powder coat finish (grey standard)</div>
+        <div class="feature-item"><div class="feature-dot"></div>Reinforced concrete anchor base (included)</div>
+        <div class="feature-item"><div class="feature-dot"></div>Standard 10×12 ft — custom sizes available</div>
+        <div class="feature-item"><div class="feature-dot"></div>Full on-site installation by certified team</div>
+        <div class="feature-item"><div class="feature-dot"></div>Site cleanup on completion</div>
+        <div class="feature-item"><div class="feature-dot"></div>25-year structural warranty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="howitworks">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">The Process</div>
+      <h2>From Quote to Done<br>in 4 Simple Steps</h2>
+      <p class="section-sub">We've made this as painless as possible. Most customers are surprised by how easy it is.</p>
+    </div>
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step-num">1</div>
+        <div class="step-title">Get a Free Quote</div>
+        <div class="step-desc">Fill in the form or message us. We respond within a few hours with a firm price — no vague estimates.</div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">2</div>
+        <div class="step-title">We Visit Your Site</div>
+        <div class="step-desc">Our team visits to confirm the spot, measure up, and answer any questions. Completely free.</div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">3</div>
+        <div class="step-title">Installation Day</div>
+        <div class="step-desc">Our crew arrives early and builds your shed from the ground up — usually done by afternoon.</div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">4</div>
+        <div class="step-title">You're Done.</div>
+        <div class="step-desc">We clean up, hand over the keys, and walk you through everything. You enjoy your new shed — forever.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="proof">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Real Customers</div>
+      <h2>They Had the Same<br>Questions You Do</h2>
+    </div>
+    <div class="testimonials">
+      <div class="testi-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"I was skeptical about the price, but honestly? Best outdoor purchase we've made. The team was in and out in one day. It's been 2 years and it still looks brand new — our wooden shed from the hardware store lasted about 18 months before it started rotting."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div>
+            <div class="testi-name">Mark K.</div>
+            <div class="testi-loc">Austin, Texas</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"I work from home and my garage had become a dumping ground. This shed completely transformed how we use our space. Everything's organized, it's dry year-round, and it genuinely looks better than my neighbor's wooden one that cost more."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SL</div>
+          <div>
+            <div class="testi-name">Sarah L.</div>
+            <div class="testi-loc">Melbourne, Australia</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Ordered on a Tuesday, installed that Friday. The guys were professional, fast, and cleaned up after themselves. My wife loves how it looks — very modern, nothing like those ugly metal sheds you see everywhere. Solid product, solid team."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JT</div>
+          <div>
+            <div class="testi-name">James T.</div>
+            <div class="testi-loc">Manchester, UK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="trust-badges fade-up">
+      <div class="badge"><span class="badge-icon">🛡️</span> 25-Year Structural Warranty</div>
+      <div class="badge"><span class="badge-icon">⭐</span> 4.9/5 Average Rating</div>
+      <div class="badge"><span class="badge-icon">🔨</span> 500+ Installs Completed</div>
+      <div class="badge"><span class="badge-icon">🚚</span> Free Site Visit</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Pricing</div>
+      <h2>Straightforward Pricing.<br>No Surprises.</h2>
+      <p class="section-sub">Everything is included — installation, base, warranty. What you see is what you pay.</p>
+    </div>
+    <div class="pricing-cards">
+      <div class="pricing-card fade-up">
+        <div class="plan-name">Classic</div>
+        <div class="plan-price">$1,899<span>/installed</span></div>
+        <div class="plan-was">Value $2,400</div>
+        <div class="plan-desc">Perfect for standard storage — tools, bikes, seasonal gear.</div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="check">✓</span> 8×10 ft aluminum shed</div>
+          <div class="plan-feature"><span class="check">✓</span> Single lockable door</div>
+          <div class="plan-feature"><span class="check">✓</span> Roof ventilation</div>
+          <div class="plan-feature"><span class="check">✓</span> Full installation</div>
+          <div class="plan-feature"><span class="check">✓</span> 15-year warranty</div>
+        </div>
+        <a href="#form-section" class="btn-outline">Get Classic Quote</a>
+      </div>
+      <div class="pricing-card featured fade-up">
+        <div class="featured-badge">⭐ Most Popular</div>
+        <div class="plan-name">ProSeries</div>
+        <div class="plan-price">$2,499<span>/installed</span></div>
+        <div class="plan-was">Value $3,200</div>
+        <div class="plan-desc">Our bestseller. The right size, the right features — for most homes.</div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="check">✓</span> 10×12 ft aluminum shed</div>
+          <div class="plan-feature"><span class="check">✓</span> Lockable double doors</div>
+          <div class="plan-feature"><span class="check">✓</span> Anti-pry security bars</div>
+          <div class="plan-feature"><span class="check">✓</span> Roof + wall ventilation</div>
+          <div class="plan-feature"><span class="check">✓</span> Reinforced concrete base</div>
+          <div class="plan-feature"><span class="check">✓</span> Full installation</div>
+          <div class="plan-feature"><span class="check">✓</span> 25-year warranty</div>
+        </div>
+        <a href="#form-section" class="btn-featured">Get ProSeries Quote →</a>
+      </div>
+      <div class="pricing-card fade-up">
+        <div class="plan-name">Custom</div>
+        <div class="plan-price" style="font-size:30px;">Let's talk<span></span></div>
+        <div class="plan-was" style="visibility:hidden;">placeholder</div>
+        <div class="plan-desc">Need a specific size, color, layout, or extra doors? We build it your way.</div>
+        <div class="plan-features">
+          <div class="plan-feature"><span class="check">✓</span> Any size or dimension</div>
+          <div class="plan-feature"><span class="check">✓</span> Color options available</div>
+          <div class="plan-feature"><span class="check">✓</span> Additional windows / doors</div>
+          <div class="plan-feature"><span class="check">✓</span> Interior shelving add-on</div>
+          <div class="plan-feature"><span class="check">✓</span> Full consultation included</div>
+        </div>
+        <a href="#form-section" class="btn-outline">Request Custom Quote</a>
+      </div>
+    </div>
+    <p class="pricing-note">💳 &nbsp;Flexible payment plans available — ask us about 0% finance options on orders over $1,500</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="tag">Common Questions</div>
+      <h2>We've Heard Every<br>Question. Here's the Truth.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long does installation actually take?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-a">Most standard sheds (10×12 or smaller) are completed within a single business day — typically 5–8 hours. Larger or custom builds may take 1.5 days. We'll give you an accurate time estimate when we visit your site beforehand.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Will it rust or deteriorate over time?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-a">No. Aluminum doesn't rust — it's one of the reasons we use it. The frames are powder-coated for UV resistance, and all fixings are galvanized steel, which is specifically engineered to resist corrosion. This shed will outlast you in your current home.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What's covered under the warranty?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-a">Our ProSeries comes with a 25-year structural warranty covering frame integrity, panel durability, and the door mechanism. We also provide a 2-year workmanship guarantee on the installation itself. If anything fails due to material or build defects, we fix it — no charge.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I customize the size?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-a">Absolutely. Our standard size is 10×12 ft, but we build to any dimension you need. Whether you have an awkward corner, a narrow garden, or need something larger, we'll design around your space. Just mention it when you get in touch.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need planning permission?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-a">In most cases, no. Sheds under a certain floor area are typically permitted development in the US, UK, Australia, and Canada. We'll advise you on local regulations during your site visit — and in most residential areas, our standard sizes fall comfortably within permitted limits.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What do I need to do before the team arrives?
+          <span class="arrow">+</span>
+        </button>
+        <div class="faq-a">Very little. Just make sure the spot is clear of obstructions. Our team brings all tools, materials, and equipment needed. We also handle all waste and cleanup at the end of the day. You literally just need to show us where you want it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section id="form-section">
+  <div class="container">
+    <div class="form-inner">
+      <div class="fade-up">
+        <div class="tag">Get Started</div>
+        <h2>Ready to Reclaim<br>Your Backyard?</h2>
+        <p style="font-size:16px;color:var(--slate-400);margin-top:16px;line-height:1.7;margin-bottom:32px;">Fill in the form and we'll get back to you within a few hours with a firm quote. No spam, no pressure — just a real answer.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--slate-400);">
+            <span style="color:var(--green);font-weight:700;">✓</span> Response within 2–4 hours
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--slate-400);">
+            <span style="color:var(--green);font-weight:700;">✓</span> Free on-site visit included
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--slate-400);">
+            <span style="color:var(--green);font-weight:700;">✓</span> No commitment required
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:14px;color:var(--slate-400);">
+            <span style="color:var(--green);font-weight:700;">✓</span> Fixed price — no hidden costs
+          </div>
+        </div>
+      </div>
+      <div class="form-card fade-up">
+        <h3>Get Your Free Quote</h3>
+        <p>Takes less than a minute. We'll handle the rest.</p>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. John Smith">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@email.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+1 555 000 0000">
+        </div>
+        <div class="form-group">
+          <label>Shed Size</label>
+          <select>
+            <option>10×12 ft (Standard — most popular)</option>
+            <option>8×10 ft (Compact)</option>
+            <option>12×16 ft (Large)</option>
+            <option>Custom size — I'll describe it</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Location / Region</label>
+          <input type="text" placeholder="e.g. Austin TX, Melbourne VIC, London UK">
+        </div>
+        <button class="form-submit">Send My Free Quote Request →</button>
+        <p class="form-privacy">🔒 We respect your privacy. No spam, ever. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta-final">
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="urgency-bar">
+      <div class="urgency-dot"></div>
+      Only 4 installation slots left this month
+    </div>
+    <h2 class="cta-final-h2">Stop Putting It Off.<br><span class="accent">Your Shed Could Be<br>Done By Friday.</span></h2>
+    <p class="cta-final-sub">Get in touch today and we'll lock in your installation date before the slots fill up.</p>
+    <div class="cta-buttons">
+      <a href="#form-section" class="btn-lg primary">📐 Get My Free Quote</a>
+      <a href="https://wa.me/your-number" class="btn-lg secondary">💬 Chat on WhatsApp</a>
+    </div>
+    <p class="micro-copy">No payment needed to get a quote · Respond within 2–4 hours · No pushy sales calls</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Steel<span class="accent">Haven</span></div>
+        <p class="footer-tagline">Premium aluminum sheds, built on-site. Designed to last a lifetime, built in a day.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#solution">How It Works</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#proof">Reviews</a>
+        <a href="#">Gallery</a>
+        <a href="#">Service Areas</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/your-number">WhatsApp</a>
+        <a href="mailto:hello@steelhaven.com">Email Us</a>
+        <a href="#form-section">Get a Quote</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 SteelHaven Sheds. All rights reserved.</p>
+      <p>Privacy Policy · Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const siblings = Array.from(el.parentElement?.querySelectorAll('.fade-up') || [el]);
+      const idx = siblings.indexOf(el);
+      el.style.transitionDelay = (idx * 80) + 'ms';
+      el.classList.add('visible');
+      observer.unobserve(el);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Smooth CTA form scroll
+document.querySelectorAll('a[href="#form-section"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
